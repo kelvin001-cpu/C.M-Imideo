@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<html lang="pt-br" style="--aviso-altura: 0px;"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programa Conect - NTEi IMÍDEO GIUSEPPE v2.0</title>
@@ -8,7 +6,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -859,7 +857,7 @@ html, body {
 }
 </style>
 
-</head>
+<style>@keyframes toastIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}</style></head>
 <body>
     <div id="alert-ribbon">⚠️ AVISO NTEi: <span id="alert-text">Sincronizando...</span> <i id="alert-ribbon-close" class="fa fa-times hidden" style="cursor:pointer; margin-left:14px" onclick="app.removerAvisoGeral()" title="Remover aviso"></i></div>
 
@@ -878,7 +876,7 @@ html, body {
         <div class="sector-column"><i class="fa fa-graduation-cap fa-3x" style="color:var(--prof)"></i><h2>PROFESSOR</h2><input type="number" id="p-p" placeholder="Prontuário"><input type="password" id="p-s" placeholder="Senha"><button class="btn" style="background:var(--prof); color:white" onclick="app.login('p','Professor')">Acessar</button></div>
         <div class="sector-column"><i class="fa fa-user-tie fa-3x" style="color:var(--gestao)"></i><h2>GESTÃO</h2><input type="number" id="g-p" placeholder="Prontuário"><input type="password" id="g-s" placeholder="Senha"><button class="btn" style="background:var(--gestao)" onclick="app.login('g','Gestão')">Acessar</button></div>
         <div class="sector-column"><i class="fa fa-building-columns fa-3x" style="color:var(--secre)"></i><h2>SECRETARIA</h2><input type="number" id="s-p" placeholder="Prontuário"><input type="password" id="s-s" placeholder="Senha"><button class="btn" style="background:var(--secre); color:white" onclick="app.login('s','Secretaria')">Acessar</button></div>
-        <div class="sector-column" style="background: rgba(46,204,113,0.03)"><i class="fa fa-user-plus fa-3x" style="color:var(--cad)"></i><h2>CADASTRO</h2><input type="text" id="c-n" placeholder="Nome Completo"><input type="number" id="c-p" placeholder="Prontuário"><input type="email" id="c-e" placeholder="E-mail @edu"><select id="c-c"><option value="Professor">Professor</option><option value="Gestão">Gestão</option><option value="Secretaria">Secretaria</option></select><button class="btn" style="background:var(--cad); color:white" onclick="app.confirmarCad()">Solicitar Cadastro</div>
+        <div class="sector-column" style="background: rgba(46,204,113,0.03)"><i class="fa fa-user-plus fa-3x" style="color:var(--cad)"></i><h2>CADASTRO</h2><input type="text" id="c-n" placeholder="Nome Completo"><input type="number" id="c-p" placeholder="Prontuário"><input type="email" id="c-e" placeholder="E-mail @edu"><select id="c-c"><option value="Professor">Professor</option><option value="Gestão">Gestão</option><option value="Secretaria">Secretaria</option></select><button class="btn" style="background:var(--cad); color:white" onclick="app.confirmarCad()">Solicitar Cadastro</button></div>
         <div class="sector-column" id="ntei-column"><i class="fa fa-terminal fa-3x" style="color:var(--ntei)"></i><h2 title="Núcleo de Tecnologia da Inovação">NTEI</h2><p style="font-size:9.5px; color:var(--text-muted); margin:-6px 0 8px 0; letter-spacing:0.4px; max-width:170px; line-height:1.3">Núcleo de Tecnologia da Inovação</p><input type="number" id="n-p" placeholder="ID"><input type="password" id="n-s" placeholder="Senha"><button class="btn" style="background:var(--ntei); color:white" onclick="app.login('n','NTEi')">Master Login</button></div>
 
     <!-- ════════════════════════ TOP BAR ════════════════════════ -->
@@ -941,7 +939,7 @@ html, body {
                 <button class="area-btn ntei-area" data-area="ntei" onclick="areaNav.toggle(this,'ntei')"><i class="fa fa-shield-halved"></i> Central NTEi <i class="fa fa-chevron-down area-caret"></i></button>
                 <div class="area-dropdown" id="area-dd-ntei">
                     <div class="area-dropdown-item" onclick="areaNav.go('admin','ntei','panel-admin-ntei')"><i class="fa fa-gauge"></i> Visão Geral / Controle Master</div>
-                    <div class="area-dropdown-item" onclick="areaNav.go('admin','ntei','panel-usuarios-ntei')"><i class="fa fa-user-shield"></i> Pessoas & Contas</div>
+                    <div class="area-dropdown-item" onclick="areaNav.go('admin','ntei','panel-usuarios-ntei')"><i class="fa fa-user-shield"></i> Pessoas &amp; Contas</div>
                     <div class="area-dropdown-item" onclick="areaNav.go('admin','ntei','permind-menus-list')"><i class="fa fa-lock"></i> Permissões</div>
                     <div class="area-dropdown-item" onclick="areaNav.go('operacional','ntei')"><i class="fa fa-ticket"></i> Atendimento (todos os chamados)</div>
                     <div class="area-dropdown-item" onclick="areaNav.go('admin','ntei','panel-veyon-master')"><i class="fa fa-desktop"></i> Tecnologia (Veyon / Rede)</div>
@@ -983,19 +981,19 @@ html, body {
     <div id="toast-container" style="position:fixed; top:60px; right:12px; z-index:999999; display:flex; flex-direction:column; gap:8px; max-width:340px; width:92vw; pointer-events:none;"></div>
 
     <!-- ════════════════════════ PAPEL DE PAREDE INSTITUCIONAL (sutil, cantos) ════════════════════════ -->
-    <div id="ntei-wallpaper" aria-hidden="true">
+    <div id="ntei-wallpaper" aria-hidden="true" style="display: block; opacity: 0.1;">
         <svg class="wp-tl" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" stroke="var(--prof)" stroke-width="2" stroke-linecap="round">
-                <path d="M10 10 L60 10 L90 40"/><circle cx="90" cy="40" r="4" fill="var(--prof)"/>
-                <path d="M10 40 L40 40 L40 90"/><circle cx="40" cy="90" r="4" fill="var(--prof)"/>
-                <path d="M10 70 L20 70 L20 120 L70 120"/><circle cx="70" cy="120" r="4" fill="var(--prof)"/>
+                <path d="M10 10 L60 10 L90 40"></path><circle cx="90" cy="40" r="4" fill="var(--prof)"></circle>
+                <path d="M10 40 L40 40 L40 90"></path><circle cx="40" cy="90" r="4" fill="var(--prof)"></circle>
+                <path d="M10 70 L20 70 L20 120 L70 120"></path><circle cx="70" cy="120" r="4" fill="var(--prof)"></circle>
             </g>
         </svg>
         <svg class="wp-br" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" stroke="var(--prof)" stroke-width="2" stroke-linecap="round">
-                <path d="M190 190 L140 190 L110 160"/><circle cx="110" cy="160" r="4" fill="var(--prof)"/>
-                <path d="M190 160 L160 160 L160 110"/><circle cx="160" cy="110" r="4" fill="var(--prof)"/>
-                <path d="M190 130 L180 130 L180 80 L130 80"/><circle cx="130" cy="80" r="4" fill="var(--prof)"/>
+                <path d="M190 190 L140 190 L110 160"></path><circle cx="110" cy="160" r="4" fill="var(--prof)"></circle>
+                <path d="M190 160 L160 160 L160 110"></path><circle cx="160" cy="110" r="4" fill="var(--prof)"></circle>
+                <path d="M190 130 L180 130 L180 80 L130 80"></path><circle cx="130" cy="80" r="4" fill="var(--prof)"></circle>
             </g>
         </svg>
     </div>
@@ -1012,7 +1010,7 @@ html, body {
             <div class="a11y-group">
                 <h4>Tema</h4>
                 <div class="a11y-theme-grid">
-                    <div class="a11y-theme-swatch" data-tema="escuro" onclick="a11yCentral.set('tema','escuro')">🌙 Escuro</div>
+                    <div class="a11y-theme-swatch active" data-tema="escuro" onclick="a11yCentral.set('tema','escuro')">🌙 Escuro</div>
                     <div class="a11y-theme-swatch" data-tema="claro" onclick="a11yCentral.set('tema','claro')">☀️ Claro</div>
                     <div class="a11y-theme-swatch" data-tema="alto-contraste" onclick="a11yCentral.set('tema','alto-contraste')">🌓 Alto Contraste</div>
                     <div class="a11y-theme-swatch" data-tema="institucional" onclick="a11yCentral.set('tema','institucional')">💙 NTEi Institucional</div>
@@ -1022,7 +1020,7 @@ html, body {
             <div class="a11y-group">
                 <h4>Fonte</h4>
                 <div class="a11y-seg">
-                    <button data-fonte="normal" onclick="a11yCentral.set('tamanhoFonte','normal')">A−</button>
+                    <button data-fonte="normal" onclick="a11yCentral.set('tamanhoFonte','normal')" class="active">A−</button>
                     <button data-fonte="medio" onclick="a11yCentral.set('tamanhoFonte','medio')">A</button>
                     <button data-fonte="grande" onclick="a11yCentral.set('tamanhoFonte','grande')">A+</button>
                 </div>
@@ -1040,7 +1038,7 @@ html, body {
 
             <div class="a11y-group">
                 <h4>Papel de parede</h4>
-                <div class="a11y-row"><span>Mostrar papel de parede</span><div class="a11y-toggle" id="a11y-tg-wallpaper" onclick="a11yCentral.set('papelParede', !a11yCentral.prefs.papelParede)"></div></div>
+                <div class="a11y-row"><span>Mostrar papel de parede</span><div class="a11y-toggle on" id="a11y-tg-wallpaper" onclick="a11yCentral.set('papelParede', !a11yCentral.prefs.papelParede)"></div></div>
                 <div class="a11y-row" style="flex-direction:column; align-items:stretch; gap:4px">
                     <span>Intensidade do fundo</span>
                     <input type="range" class="a11y-slider" id="a11y-slider-wallpaper" min="0" max="30" oninput="a11yCentral.set('intensidadeWallpaper', parseInt(this.value))">
@@ -1744,7 +1742,7 @@ html, body {
 
                 <!-- Gamificação -->
                 <div class="panel">
-                    <h3 style="color:var(--gestao)"><i class="fa fa-trophy"></i> Gamificação & Conquistas</h3>
+                    <h3 style="color:var(--gestao)"><i class="fa fa-trophy"></i> Gamificação &amp; Conquistas</h3>
                     <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px">
                         <div>
                             <p style="font-size:12px; color:var(--text-muted); margin-top:0">Atribuir conquista a um aluno:</p>
@@ -2163,7 +2161,7 @@ html, body {
 
                     <!-- Usuários & Segurança -->
                     <div id="panel-usuarios-ntei" class="panel hidden" style="border:1px solid rgba(235,77,75,0.3)">
-                        <h3 style="color:var(--ntei)"><i class="fa fa-user-shield"></i> GERENCIAR CONTAS & SEGURANÇA</h3>
+                        <h3 style="color:var(--ntei)"><i class="fa fa-user-shield"></i> GERENCIAR CONTAS &amp; SEGURANÇA</h3>
 
                         <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px; margin-bottom: 10px;">
                             <small style="color: #ccc; font-size: 11px;">Notificação Privada:</small>
@@ -2200,8 +2198,8 @@ html, body {
                     <p style="font-size:11px; color:var(--text-muted); margin:14px 0 4px 0">Velocidade de conexão do seu dispositivo (medida ao vivo):</p>
                     <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap; background:rgba(0,0,0,0.25); border-radius:10px; padding:12px">
                         <svg viewBox="0 0 200 110" style="width:150px; flex-shrink:0">
-                            <path d="M10,100 A90,90 0 0,1 190,100" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="14"/>
-                            <path id="veloc-arc" d="M10,100 A90,90 0 0,1 190,100" fill="none" stroke="var(--prof)" stroke-width="14" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"/>
+                            <path d="M10,100 A90,90 0 0,1 190,100" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="14"></path>
+                            <path id="veloc-arc" d="M10,100 A90,90 0 0,1 190,100" fill="none" stroke="var(--prof)" stroke-width="14" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"></path>
                             <text x="100" y="90" text-anchor="middle" font-family="Orbitron" font-size="26" fill="white" id="veloc-num">—</text>
                             <text x="100" y="106" text-anchor="middle" font-family="Poppins" font-size="10" fill="#8b949e">Mbps</text>
                         </svg>
@@ -2254,7 +2252,7 @@ html, body {
                     <p style="font-size:10px; color:#aaa; margin:10px 0 4px 0">Perfis com acesso:</p>
                     <div id="menu-perfis-checks" style="display:flex; gap:10px; flex-wrap:wrap; font-size:11px"></div>
                     <input type="text" id="menu-prontuarios" placeholder="Prontuários específicos (opcional, separados por vírgula)" style="margin-top:8px">
-                    <label style="display:flex; align-items:center; gap:6px; font-size:11px; margin-top:8px"><input type="checkbox" id="menu-ativo" checked style="width:auto"> Ativo</label>
+                    <label style="display:flex; align-items:center; gap:6px; font-size:11px; margin-top:8px"><input type="checkbox" id="menu-ativo" checked="" style="width:auto"> Ativo</label>
                     <div style="display:flex; gap:8px">
                         <button class="btn" style="background:var(--prof); margin-top:10px" onclick="criadorMenus.salvar()" id="menu-btn-salvar">CRIAR / SALVAR MENU</button>
                         <button class="btn" style="background:rgba(255,255,255,0.1); margin-top:10px; display:none" id="menu-btn-cancelar" onclick="criadorMenus.cancelarEdicao()">CANCELAR EDIÇÃO</button>
@@ -2288,7 +2286,7 @@ html, body {
                         </select>
                         <input type="text" id="funcao-acao-valor" placeholder="Texto da mensagem, URL, ou nome da ação (ex: modules.show('chamados'))" style="margin:0">
                     </div>
-                    <label style="display:flex; align-items:center; gap:6px; font-size:11px; margin-top:8px"><input type="checkbox" id="funcao-ativa" checked style="width:auto"> Ativa</label>
+                    <label style="display:flex; align-items:center; gap:6px; font-size:11px; margin-top:8px"><input type="checkbox" id="funcao-ativa" checked="" style="width:auto"> Ativa</label>
                     <div style="display:flex; gap:8px">
                         <button class="btn" style="background:var(--secre)" onclick="criadorFuncoes.salvar()" id="funcao-btn-salvar">CRIAR / SALVAR FUNÇÃO</button>
                         <button class="btn" style="background:rgba(255,255,255,0.1); display:none" id="funcao-btn-cancelar" onclick="criadorFuncoes.cancelarEdicao()">CANCELAR EDIÇÃO</button>
@@ -6666,5 +6664,6 @@ input::placeholder, textarea::placeholder { color: #94a3b8 !important; opacity: 
         };
     }
     </script>
-</body>
-</html>
+
+
+</div></body></html>
